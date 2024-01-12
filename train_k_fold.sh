@@ -1,6 +1,6 @@
 array=( 0 1 2 3 4 5 6 7 8 9 )
 
-data_dir=/data
+data_dir=C:/Users/shenu/PycharmProjects/Yarish-RDMPNN/data
 for i in "${array[@]}"
 do
      python train.py --data_path    ${data_dir}/mapped_Buchwald_Hartwig/train_cv_${i}.csv  --features_path ${data_dir}/mapped_Buchwald_Hartwig/train_cv_${i}_feat_rdkit.csv --dataset_type regression  --separate_val_path ${data_dir}/mapped_Buchwald_Hartwig/test_cv_${i}.csv  --separate_test_path ${data_dir}/mapped_Buchwald_Hartwig/test_cv_${i}.csv  --separate_val_features_path ${data_dir}/mapped_Buchwald_Hartwig/test_cv_${i}_feat_rdkit.csv  --separate_test_features_path ${data_dir}/mapped_Buchwald_Hartwig/test_cv_${i}_feat_rdkit.csv --save_dir ./output/Buchwald_Hartwig_f${i}/ --reaction --epochs 110 --metric r2  --batch_size 64  --hidden_size 1000  --bias --depth 3 --depth_diff 1 --ffn_num_layers 3 --dropout 0.25 --activation LeakyReLU --no_features_scaling
